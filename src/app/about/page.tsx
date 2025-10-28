@@ -155,16 +155,21 @@ function AboutHero() {
     <section className="relative flex flex-col gap-10 px-4 pt-16 sm:px-6 lg:flex-row lg:items-end lg:gap-16 lg:px-8">
       <div className="relative w-full max-w-md overflow-hidden bg-fog/90 shadow-[0_40px_120px_-100px_rgba(11,11,11,0.6)]">
         <img
-          src="/about/pilu.png"
+          src="/about/pilu.jpg"
           alt="studio pill portrait"
           loading="lazy"
           decoding="async"
-          width={640}
-          height={800}
           className="h-full w-full object-cover transition-transform duration-1000 ease-soft-ease hover:scale-[1.03]"
         />
       </div>
       <div className="flex max-w-2xl flex-col gap-6 text-sm text-ink/55">
+          <img
+              src="/about/pilu.png"
+              alt="studio pill portrait"
+              loading="lazy"
+              decoding="async"
+              className="h-full w-full object-cover transition-transform duration-1000 ease-soft-ease hover:scale-[1.03]"
+          />
         <span className="text-xs text-ink/40">about</span>
         <h1 className="text-sm text-ink/70">
           șerban vacariu (also knows as pilu) designs cg universes for calm spaces.
