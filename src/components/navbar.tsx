@@ -70,7 +70,7 @@ export function Navbar(): JSX.Element {
                   {label}
                   <span
                     className={[
-                      "ml-1 h-[2px] w-2 rounded-full bg-ink transition-opacity duration-250 ease-soft-ease",
+                      "ml-1 h-[2px] w-2 bg-ink transition-opacity duration-250 ease-soft-ease",
                       active ? "opacity-60" : "opacity-0",
                     ]
                       .filter(Boolean)

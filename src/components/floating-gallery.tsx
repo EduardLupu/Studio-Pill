@@ -102,7 +102,7 @@ function RevealImage({
     <div
       ref={ref}
       className={[
-        "relative overflow-hidden rounded-[1.8rem] bg-fog/60 shadow-[0_30px_80px_-60px_rgba(11,11,11,0.4)] transition-all duration-700 ease-soft-ease",
+        "relative overflow-hidden bg-fog/60 shadow-[0_30px_80px_-60px_rgba(11,11,11,0.4)] transition-all duration-700 ease-soft-ease",
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
         accent ? "hover:shadow-[0_40px_120px_-70px_rgba(11,11,11,0.55)]" : "",
       ]

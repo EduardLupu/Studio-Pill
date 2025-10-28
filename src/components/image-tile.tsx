@@ -16,7 +16,7 @@ export const ImageTile = forwardRef<HTMLDivElement, ImageTileProps>(
     const content = (
       <div
         className={[
-          "group relative overflow-hidden rounded-[1.6rem] bg-fog/80",
+          "group relative overflow-hidden bg-fog/80",
           aspectRatio,
           "transition-transform duration-250 ease-soft-ease hover:scale-[1.01]",
           "focus-ring",

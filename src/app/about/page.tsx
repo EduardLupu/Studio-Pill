@@ -53,7 +53,7 @@ export default function AboutPage(): JSX.Element {
           <div className="h-px w-full bg-ink/10" />
           <Link
             href="mailto:hello@studiopill.com"
-            className="focus-ring inline-flex w-fit items-center gap-2 rounded-full border border-ink/15 px-4 py-2 text-ink/60 transition-all duration-250 ease-soft-ease hover:-translate-y-1 hover:border-ink/25 hover:text-ink"
+            className="focus-ring inline-flex w-fit items-center gap-2 border border-ink/15 px-4 py-2 text-ink/60 transition-all duration-250 ease-soft-ease hover:-translate-y-1 hover:border-ink/25 hover:text-ink"
           >
             email the studio
           </Link>
@@ -89,7 +89,7 @@ export default function AboutPage(): JSX.Element {
             {pillars.map((pillar) => (
               <div
                 key={pillar.title}
-                className="rounded-[1.6rem] border border-ink/10 bg-white/90 p-6 text-sm text-ink/60 shadow-[0_20px_80px_-70px_rgba(11,11,11,0.45)] transition-transform duration-500 ease-soft-ease hover:-translate-y-1"
+                className="border border-ink/10 bg-white/90 p-6 text-sm text-ink/60 shadow-[0_20px_80px_-70px_rgba(11,11,11,0.45)] transition-transform duration-500 ease-soft-ease hover:-translate-y-1"
               >
                 <span className="text-xs text-ink/40">{pillar.title}</span>
                 <p className="mt-4 text-sm text-ink/60">{pillar.body}</p>
@@ -109,7 +109,7 @@ export default function AboutPage(): JSX.Element {
             {Array.from({ length: 4 }).map((_, index) => (
               <div
                 key={index}
-                className="animate-pulse rounded-[1.8rem] bg-fog/80 pb-[75%]"
+                className="animate-pulse bg-fog/80 pb-[75%]"
               />
             ))}
           </div>
@@ -124,7 +124,7 @@ export default function AboutPage(): JSX.Element {
         ) : null}
       </section>
 
-      <section className="mx-auto max-w-3xl rounded-[2rem] border border-ink/10 bg-white/90 px-6 py-10 text-sm text-ink/55 shadow-[0_20px_120px_-90px_rgba(11,11,11,0.45)] sm:px-10">
+      <section className="mx-auto max-w-3xl border border-ink/10 bg-white/90 px-6 py-10 text-sm text-ink/55 shadow-[0_20px_120px_-90px_rgba(11,11,11,0.45)] sm:px-10">
         <p>
           available for collaborations, residency visuals, and architectural
           competitions. drop references, playlists, and moodboards - let's craft a
@@ -153,7 +153,7 @@ const pillars = [
 function AboutHero() {
   return (
     <section className="relative flex flex-col gap-10 px-4 pt-16 sm:px-6 lg:flex-row lg:items-end lg:gap-16 lg:px-8">
-      <div className="relative w-full max-w-md overflow-hidden rounded-[2rem] bg-fog/90 shadow-[0_40px_120px_-100px_rgba(11,11,11,0.6)]">
+      <div className="relative w-full max-w-md overflow-hidden bg-fog/90 shadow-[0_40px_120px_-100px_rgba(11,11,11,0.6)]">
         <img
           src="/about/pilu.png"
           alt="studio pill portrait"

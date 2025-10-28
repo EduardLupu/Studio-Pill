@@ -3,7 +3,6 @@
 import Link from "next/link";
 import Script from "next/script";
 import { useMemo } from "react";
-import { ScrollGallery } from "@/components/scroll-gallery";
 import { FloatingGallery } from "@/components/floating-gallery";
 import { useImageManifest } from "@/lib/manifest";
 
@@ -68,11 +67,11 @@ export default function HomePage(): JSX.Element {
                     <span>slow pace recommended</span>
                 </div>
                 {rendersLoading && (
-                    <div className="h-[70vh] animate-pulse rounded-[2.6rem] bg-fog/80"/>
+                    <div className="h-[70vh] animate-pulse bg-fog/80"/>
                 )}
             </section>
 
-            {readyRenders.length > 0 ? <ScrollGallery items={readyRenders}/> : null}
+            {readyRenders.length > 0 ? <FloatingGallery items={readyRenders} columns={2}/> : null}
 
             {renders.status === "error" ? (
                 <p className="px-4 text-sm text-ink/40 sm:px-6 lg:px-8">
@@ -103,7 +102,7 @@ export default function HomePage(): JSX.Element {
                         {Array.from({length: 6}).map((_, index) => (
                             <div
                                 key={index}
-                                className="animate-pulse rounded-[1.8rem] bg-fog/80 pb-[75%]"
+                                className="animate-pulse bg-fog/80 pb-[75%]"
                             />
                         ))}
                     </div>
@@ -135,7 +134,7 @@ function Hero() {
                 <div className="flex max-w-3xl flex-col gap-10 text-ink/75">
                     <div className="flex items-center gap-6">
             <span
-                className="relative inline-flex h-24 w-24 items-center justify-center rounded-[1.6rem] bg-white/70 shadow-[0_20px_90px_-60px_rgba(11,11,11,0.6)] backdrop-blur">
+                className="relative inline-flex h-24 w-24 items-center justify-center bg-white/70 shadow-[0_20px_90px_-60px_rgba(11,11,11,0.6)] backdrop-blur">
               <img
                   src="/pillv3.png"
                   alt="studio pill logo"
@@ -172,7 +171,7 @@ function Hero() {
                 <div className="flex flex-col items-end gap-5 text-xs text-ink/60">
                     <Link
                         href="/about"
-                        className="group focus-ring inline-flex items-center gap-3 rounded-full border border-ink/10 px-6 py-3 text-ink transition-all duration-300 ease-soft-ease hover:-translate-y-1 hover:border-ink/30 hover:bg-fog/70"
+                        className="group focus-ring inline-flex items-center gap-3 border border-ink/10 px-6 py-3 text-ink transition-all duration-300 ease-soft-ease hover:-translate-y-1 hover:border-ink/30 hover:bg-fog/70"
                         prefetch
                     >
                         <span>about</span>
@@ -193,7 +192,7 @@ function Hero() {
 function ContactBlock() {
     return (
         <section
-            className="mx-auto flex max-w-4xl flex-col gap-6 rounded-[2.4rem] border border-white/70 bg-gradient-to-br from-white/88 via-white/74 to-white/62 px-6 py-12 text-sm text-ink/70 shadow-[0_40px_160px_-100px_rgba(11,11,11,0.55)] backdrop-blur-xl sm:px-12">
+            className="mx-auto flex max-w-4xl flex-col gap-6  border border-white/70 bg-gradient-to-br from-white/88 via-white/74 to-white/62 px-6 py-12 text-sm text-ink/70 shadow-[0_40px_160px_-100px_rgba(11,11,11,0.55)] backdrop-blur-xl sm:px-12">
             <p className="max-w-2xl text-ink/75">
                 collaborations, briefs, and moodboards land at{" "}
                 <Link
