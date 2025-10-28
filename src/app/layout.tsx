@@ -1,59 +1,100 @@
 import type { Metadata } from "next";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
-import { montserrat } from "@/lib/fonts";
+import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/footer";
+import { GoogleAnalytics } from "@next/third-parties/google";
+
+const grotesk = Space_Grotesk({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-grotesk",
+  weight: ["300", "400", "500", "600"],
+});
+
+const baseTitle = "studio pill - cg artist - 3d visualization";
+const description =
+  "studio pill crafts emotive cg and 3d visualization experiences from cluj-napoca, romania. interior, exterior, and visual arts projects.";
 
 export const metadata: Metadata = {
-  title: "studio pill",
-  description: "Work in progress",
-  icons: {
-    icon: [
+  metadataBase: new URL("https://studiopill.com"),
+  title: {
+    default: baseTitle,
+    template: "%s - studio pill",
+  },
+  description,
+  openGraph: {
+    title: baseTitle,
+    description,
+    url: "https://studiopill.com",
+    siteName: "studio pill",
+    type: "website",
+    locale: "en_US",
+    images: [
       {
-        rel: "icon",
-        url: "/android-chrome-192x192.png",
-        sizes: "192x192",
-        type: "image/png",
-      },
-
-      {
-        rel: "icon",
-        url: "/android-chrome-512x512.png",
-        sizes: "512x512",
-        type: "image/png",
-      },
-      {
-        rel: "apple-touch-icon",
-        url: "/apple-touch-icon.png",
-        sizes: "180x180",
-        type: "image/png",
-      },
-      {
-        rel: "favicon-16x16",
-        url: "/favicon-16x16.png",
-        sizes: "16x16",
-        type: "image/png",
-      },
-      {
-        rel: "favicon-32x32",
-        url: "/favicon-32x32.png",
-        sizes: "32x32",
-        type: "image/png",
+        url: "https://studiopill.com/pillv3.png",
+        width: 512,
+        height: 512,
+        alt: "studio pill monogram",
       },
     ],
-    shortcut: { url: "/favicon.ico" },
   },
-  manifest: "/site.webmanifest",
+  twitter: {
+    card: "summary_large_image",
+    title: baseTitle,
+    description,
+    images: ["https://studiopill.com/pillv3.png"],
+  },
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+  keywords: [
+    "studio pill",
+    "cg artist",
+    "3d visualization",
+    "architectural renders",
+    "visualization studio",
+    "interior renders",
+    "exterior renders",
+    "visual storytelling",
+  ],
+  alternates: {
+    canonical: "https://studiopill.com",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>): JSX.Element {
   return (
-    <html lang="en">
-      <body className={montserrat.className}>{children}</body>
-      <GoogleAnalytics gaId={`${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`} />
+    <html lang="en" className="bg-white text-ink">
+      <body
+        className={[
+          grotesk.variable,
+          "min-h-screen bg-white text-ink antialiased",
+        ]
+          .filter(Boolean)
+          .join(" ")}
+      >
+        <Navbar />
+        <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col px-4 pb-20 pt-16 sm:px-6 lg:px-8">
+          {children}
+        </main>
+        <Footer />
+        <GoogleAnalytics gaId={`${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`} />
+      </body>
     </html>
   );
 }
