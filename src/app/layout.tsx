@@ -32,9 +32,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "https://studiopill.com/pillv3.png",
-        width: 512,
-        height: 512,
+        url: "https://studiopill.com/apple-touch-icon.png",
+        width: 180,
+        height: 180,
         alt: "studio pill monogram",
       },
     ],
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: baseTitle,
     description,
-    images: ["https://studiopill.com/pillv3.png"],
+    images: ["https://studiopill.com/apple-touch-icon.png"],
   },
   icons: {
     icon: "/favicon.ico",

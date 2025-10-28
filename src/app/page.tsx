@@ -71,7 +71,7 @@ export default function HomePage(): JSX.Element {
                 )}
             </section>
 
-            {readyRenders.length > 0 ? <FloatingGallery items={readyRenders} columns={2}/> : null}
+            {readyRenders.length > 0 ? <FloatingGallery items={readyRenders} columns={2} showCaptions={true}/> : null}
 
             {renders.status === "error" ? (
                 <p className="px-4 text-sm text-ink/40 sm:px-6 lg:px-8">
